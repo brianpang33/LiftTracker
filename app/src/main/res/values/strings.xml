@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LiftTracker</string>
+    <string name="title_activity_display_exercise">DisplayExercise</string>
+    <string name="title_activity_edit_and_delete_data_screen">EditAndDeleteDataScreen</string>
 </resources>

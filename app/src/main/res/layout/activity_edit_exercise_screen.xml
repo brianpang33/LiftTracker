@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.brian.lifttracker.AddExerciseScreen"
+    android:textColor="@color/colorAccent"
+    >
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="82dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent"
+            >
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editTextName"
+            android:layout_below="@+id/editTextName"
+            android:layout_marginTop="22dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBottom="@+id/editTextName"
+            android:text="Exercise"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/weightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/nameTextView"
+            android:layout_alignBottom="@+id/editTextWeight"
+            android:text="Weight"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editTextWeight"
+            android:layout_marginEnd="72dp"
+            android:layout_marginRight="72dp"
+            android:layout_marginTop="162dp"
+            android:text="edit" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="87dp"
+            android:layout_toEndOf="@+id/nameTextView"
+            android:layout_toRightOf="@+id/nameTextView"
+            android:text="delete" />
+
+
+
+
+</RelativeLayout>
