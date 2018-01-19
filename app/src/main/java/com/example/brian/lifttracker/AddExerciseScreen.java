@@ -19,14 +19,18 @@ public class AddExerciseScreen extends AppCompatActivity {
 
     EditText name;
     EditText weight;
+    EditText set;
+    EditText rep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_exercise_screen);
 
-        name = findViewById(R.id.editTextName);
-        weight = findViewById(R.id.editTextWeight);
+        name = findViewById(R.id.addTextName);
+        weight = findViewById(R.id.addTextWeight);
+        set = findViewById(R.id.addTextSet);
+        rep = findViewById(R.id.addTextRep);
 
         taskHelper = new TaskHelper(this);
 
@@ -36,9 +40,11 @@ public class AddExerciseScreen extends AppCompatActivity {
             public void onClick(View view) {
                 String checkName = name.getText().toString();
                 String checkWeight = weight.getText().toString();
+                String checkSet = set.getText().toString();
+                String checkRep = rep.getText().toString();
 
                 if(checkName.length() !=0 && checkWeight.length() !=0){
-                    AddExercise(checkName,checkWeight);
+                    AddExercise(checkName,checkWeight,checkSet,checkRep);
                 }
             }
         });
@@ -46,8 +52,8 @@ public class AddExerciseScreen extends AppCompatActivity {
 
     }
 
-    public void AddExercise(String name, String weight){
-        boolean addData = taskHelper.insertExercise(name,weight);
+    public void AddExercise(String name, String weight, String set, String rep){
+        boolean addData = taskHelper.insertExercise(name,weight,set,rep);
 
         if(addData){
             Toast.makeText(this,"added",Toast.LENGTH_SHORT).show();

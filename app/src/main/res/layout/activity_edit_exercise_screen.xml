@@ -1,87 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.example.brian.lifttracker.AddExerciseScreen"
-    android:textColor="@color/colorAccent"
-    >
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="82dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:inputType="text"
-            android:textColor="@color/colorAccent"
-            android:textColorHighlight="@color/colorAccent"
-            >
-        </EditText>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/editTextWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editTextName"
-            android:layout_below="@+id/editTextName"
-            android:layout_marginTop="22dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textColor="@color/colorAccent"
-            android:textColorHighlight="@color/colorAccent">
-        </EditText>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="97dp">
 
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignBottom="@+id/editTextName"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="120dp"
+            android:layout_marginStart="120dp"
             android:text="Exercise"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/addTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="151dp"
+            android:layout_marginRight="151dp"
+            android:inputType="text"
             android:textColor="@color/colorAccent"
-            android:textColorHighlight="@color/colorAccent"/>
+            android:textColorHint="@color/colorAccent" />
 
         <TextView
             android:id="@+id/weightTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_alignLeft="@+id/nameTextView"
-            android:layout_alignBottom="@+id/editTextWeight"
+            android:layout_alignStart="@+id/nameTextView"
+            android:layout_below="@+id/addTextName"
             android:text="Weight"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/addTextWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/addTextName"
+            android:layout_alignStart="@+id/addTextName"
+            android:layout_below="@+id/addTextName"
+            android:inputType="number"
             android:textColor="@color/colorAccent"
-            android:textColorHighlight="@color/colorAccent"/>
+            android:textColorHint="@color/colorAccent" />
 
-        <Button
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+    </RelativeLayout>
 
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/editTextWeight"
-            android:layout_marginEnd="72dp"
-            android:layout_marginRight="72dp"
-            android:layout_marginTop="162dp"
-            android:text="edit" />
-
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="87dp"
-            android:layout_toEndOf="@+id/nameTextView"
-            android:layout_toRightOf="@+id/nameTextView"
-            android:text="delete" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="97dp">
 
 
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="97dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <EditText
+                android:id="@+id/addTextSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/addTextRep"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/addTextRep"
+                android:inputType="text"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent" />
+
+            <EditText
+                android:id="@+id/addTextRep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="148dp"
+                android:layout_marginRight="148dp"
+                android:inputType="text"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/RepTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignEnd="@+id/setTextView"
+                android:layout_alignRight="@+id/setTextView"
+                android:layout_alignTop="@+id/addTextRep"
+                android:text="Rep"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/setTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
 
-</RelativeLayout>
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="123dp"
+                android:layout_marginStart="123dp"
+                android:layout_marginTop="15dp"
+                android:text="Set"
+                android:textColor="@color/colorAccent" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+<Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete" />
+
+</LinearLayout>

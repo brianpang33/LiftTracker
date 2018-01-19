@@ -16,12 +16,14 @@ import com.example.brian.lifttracker.database.TaskHelper;
 public class EditExerciseScreen extends AppCompatActivity {
 
     private Button delete, edit;
-    private EditText editName, editWeight;
+    private EditText editName, editWeight, editSet, editRep;
 
     TaskHelper helper;
 
     private String name;
     private String weight;
+    private String set;
+    private String rep;
     private int id;
 
     @Override
@@ -32,6 +34,8 @@ public class EditExerciseScreen extends AppCompatActivity {
         delete = findViewById(R.id.delete);
         editName =findViewById(R.id.editTextName);
         editWeight = findViewById(R.id.editTextWeight);
+        editSet = findViewById(R.id.editTextSet);
+        editRep = findViewById(R.id.editTextRep);
         helper = new TaskHelper(this);
 
         Intent intent = getIntent();
@@ -39,19 +43,25 @@ public class EditExerciseScreen extends AppCompatActivity {
         id = intent.getIntExtra("id",-1);
         name = intent.getStringExtra("name");
         weight = intent.getStringExtra("weight");
+        set = intent.getStringExtra("set");
+        rep = intent.getStringExtra("rep");
 
         editName.setText(name);
         editWeight.setText(weight);
+        editSet.setText(set);
+        editRep.setText(rep);
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String item = editName.getText().toString();
                 String item1 = editWeight.getText().toString();
-                if(!item.equals("")){
+                String item2 = editSet.getText().toString();
+                String item3 = editRep.getText().toString();
 
-                    helper.updateName(item,id,name);
-                    helper.updateWeight(item1,id,weight);
+                if(!item.equals("") && !item1.equals("") && !item2.equals("") && !item3.equals("")){
+
+                    helper.updateExercise(id,item,item1,item2,item3);
                     Intent intent = new Intent(EditExerciseScreen.this,TrackingScreen.class);
                     startActivity(intent);
 
@@ -64,9 +74,11 @@ public class EditExerciseScreen extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                helper.deleteName(id,name);
-                helper.deleteWeight(id,weight);
+                helper.deleteExercise(id);
                 editName.setText("");
+                editRep.setText("");
+                editWeight.setText("");
+                editSet.setText("");
                 Toast.makeText(EditExerciseScreen.this,"deleted",Toast.LENGTH_SHORT);
                 Intent intent = new Intent(EditExerciseScreen.this,TrackingScreen.class);
                 startActivity(intent);
