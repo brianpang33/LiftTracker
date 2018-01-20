@@ -12,15 +12,13 @@ import android.widget.Toast;
 import com.example.brian.lifttracker.database.TaskHelper;
 
 
-
 public class AddExerciseScreen extends AppCompatActivity {
-
-    private TaskHelper taskHelper;
 
     EditText name;
     EditText weight;
     EditText set;
     EditText rep;
+    private TaskHelper taskHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +41,8 @@ public class AddExerciseScreen extends AppCompatActivity {
                 String checkSet = set.getText().toString();
                 String checkRep = rep.getText().toString();
 
-                if(checkName.length() !=0 && checkWeight.length() !=0){
-                    AddExercise(checkName,checkWeight,checkSet,checkRep);
+                if (checkName.length() != 0 && checkWeight.length() != 0) {
+                    AddExercise(checkName, checkWeight, checkSet, checkRep);
                 }
             }
         });
@@ -52,21 +50,18 @@ public class AddExerciseScreen extends AppCompatActivity {
 
     }
 
-    public void AddExercise(String name, String weight, String set, String rep){
-        boolean addData = taskHelper.insertExercise(name,weight,set,rep);
+    public void AddExercise(String name, String weight, String set, String rep) {
+        boolean addData = taskHelper.insertExercise(name, weight, set, rep);
 
-        if(addData){
-            Toast.makeText(this,"added",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,TrackingScreen.class);
+        if (addData) {
+            Toast.makeText(this, "added", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, TrackingScreen.class);
             startActivity(intent);
 
-        }else{
-            Toast.makeText(this,"not added",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "not added", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
 
 
 }

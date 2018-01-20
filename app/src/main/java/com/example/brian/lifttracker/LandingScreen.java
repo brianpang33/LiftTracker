@@ -32,13 +32,13 @@ public class LandingScreen extends AppCompatActivity {
 
     }
 
-    private void onButtonClicked(){
-        Intent intent = new Intent(this,TrackingScreen.class);
+    private void onButtonClicked() {
+        Intent intent = new Intent(this, TrackingScreen.class);
         startActivity(intent);
     }
 
-    private void onTimerClicked(){
-        Intent intent = new Intent(this,TimerScreen.class);
+    private void onTimerClicked() {
+        Intent intent = new Intent(this, TimerScreen.class);
         startActivity(intent);
     }
 }
