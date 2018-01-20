@@ -30,7 +30,7 @@
             android:textColor="@color/colorAccent" />
 
         <EditText
-            android:id="@+id/addTextName"
+            android:id="@+id/editTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -49,17 +49,17 @@
 
             android:layout_alignLeft="@+id/nameTextView"
             android:layout_alignStart="@+id/nameTextView"
-            android:layout_below="@+id/addTextName"
+            android:layout_below="@+id/editTextName"
             android:text="Weight"
             android:textColor="@color/colorAccent" />
 
         <EditText
-            android:id="@+id/addTextWeight"
+            android:id="@+id/editTextWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/addTextName"
-            android:layout_alignStart="@+id/addTextName"
-            android:layout_below="@+id/addTextName"
+            android:layout_alignLeft="@+id/editTextName"
+            android:layout_alignStart="@+id/editTextName"
+            android:layout_below="@+id/editTextName"
             android:inputType="number"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
@@ -79,18 +79,18 @@
             android:layout_alignParentTop="true">
 
             <EditText
-                android:id="@+id/addTextSet"
+                android:id="@+id/editTextSet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/addTextRep"
+                android:layout_alignLeft="@+id/editTextRep"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/addTextRep"
+                android:layout_alignStart="@+id/editTextRep"
                 android:inputType="text"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent" />
 
             <EditText
-                android:id="@+id/addTextRep"
+                android:id="@+id/editTextRep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -109,7 +109,7 @@
 
                 android:layout_alignEnd="@+id/setTextView"
                 android:layout_alignRight="@+id/setTextView"
-                android:layout_alignTop="@+id/addTextRep"
+                android:layout_alignTop="@+id/editTextRep"
                 android:text="Rep"
                 android:textColor="@color/colorAccent" />
 

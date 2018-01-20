@@ -22,6 +22,9 @@ public class TrackingScreen extends AppCompatActivity {
     private TaskHelper helper;
     private ListView taskListView;
     private Intent intent;
+    private String weight = "";
+    private String sets = "";
+    private String reps = "";
 
 
     @Override
@@ -53,17 +56,25 @@ public class TrackingScreen extends AppCompatActivity {
         Cursor data = helper.getInfo();
         ArrayList<String> listData = new ArrayList<>();
 
+
         while(data.moveToNext()){
-            listData.add(data.getString(1));
+            String s = "Exercise: " + data.getString(1) + ", " + "Weight: " + data.getString(2) + ", " + "Sets: " + data.getString(3) +
+                    ", "+ "Reps: " + data.getString(4);
+            listData.add(s);
+
         }
+
+
 
         ListAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listData);
         taskListView.setAdapter(adapter);
 
         taskListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = adapterView.getItemAtPosition(i).toString();
+
+                String name = adapterView.getItemAtPosition(i).toString().split(",")[0].split(":")[1].trim();
 
                 Cursor data = helper.getItemID(name);
 
@@ -77,6 +88,10 @@ public class TrackingScreen extends AppCompatActivity {
                     intent = new Intent(TrackingScreen.this, EditExerciseScreen.class);
                     intent.putExtra("id",itemID);
                     intent.putExtra("name",name);
+                    intent.putExtra("weight",weight);
+                    intent.putExtra("set",sets);
+                    intent.putExtra("rep",reps);
+
                     startActivity(intent);
 
                 }else{

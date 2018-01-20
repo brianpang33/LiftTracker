@@ -89,7 +89,7 @@ public class TaskHelper extends SQLiteOpenHelper{
 
         contentValues.put("name", name);
         contentValues.put("weight", weight);
-        contentValues.put("set", set);
+        contentValues.put("sets", set);
         contentValues.put("rep",rep);
 
         d.update("exercise", contentValues,"id = ? ",new String[]{Integer.toString(id)});
