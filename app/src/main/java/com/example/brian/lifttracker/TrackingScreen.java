@@ -22,9 +22,6 @@ public class TrackingScreen extends AppCompatActivity {
     private TaskHelper helper;
     private ListView taskListView;
     private Intent intent;
-    private String weight = "";
-    private String sets = "";
-    private String reps = "";
 
 
     @Override
@@ -38,35 +35,34 @@ public class TrackingScreen extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.add_lift,menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_lift, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent intent = new Intent(this,AddExerciseScreen.class);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(this, AddExerciseScreen.class);
         startActivity(intent);
         return true;
     }
 
 
-    private void update(){
+    private void update() {
 
         Cursor data = helper.getInfo();
         ArrayList<String> listData = new ArrayList<>();
 
 
-        while(data.moveToNext()){
+        while (data.moveToNext()) {
             String s = "Exercise: " + data.getString(1) + ", " + "Weight: " + data.getString(2) + ", " + "Sets: " + data.getString(3) +
-                    ", "+ "Reps: " + data.getString(4);
+                    ", " + "Reps: " + data.getString(4);
             listData.add(s);
 
         }
 
 
-
-        ListAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listData);
+        ListAdapter adapter = new ArrayAdapter<>(this, R.layout.my_text_view, listData);
         taskListView.setAdapter(adapter);
 
         taskListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -80,22 +76,15 @@ public class TrackingScreen extends AppCompatActivity {
 
                 int itemID = -1;
 
-                while(data.moveToNext()){
+                while (data.moveToNext()) {
                     itemID = data.getInt(0);
                 }
-                if(itemID > -1){
+                if (itemID > -1) {
 
                     intent = new Intent(TrackingScreen.this, EditExerciseScreen.class);
-                    intent.putExtra("id",itemID);
-                    intent.putExtra("name",name);
-                    intent.putExtra("weight",weight);
-                    intent.putExtra("set",sets);
-                    intent.putExtra("rep",reps);
+                    intent.putExtra("id", itemID);
 
                     startActivity(intent);
-
-                }else{
-
 
                 }
             }

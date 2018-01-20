@@ -15,9 +15,11 @@
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="120dp"
-            android:layout_marginStart="120dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginStart="66dp"
             android:text="Exercise"
             android:textColor="@color/colorAccent" />
 
@@ -28,8 +30,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="151dp"
-            android:layout_marginRight="151dp"
+            android:layout_marginEnd="78dp"
+            android:layout_marginRight="78dp"
             android:inputType="text"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
@@ -78,11 +80,11 @@
             android:id="@+id/addTextRep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginEnd="148dp"
-            android:layout_marginRight="148dp"
+            android:layout_below="@+id/addTextSet"
+            android:layout_marginEnd="76dp"
+            android:layout_marginRight="76dp"
             android:inputType="text"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
@@ -109,8 +111,8 @@
             android:layout_alignBottom="@+id/addTextSet"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="118dp"
-            android:layout_marginStart="118dp"
+            android:layout_marginLeft="69dp"
+            android:layout_marginStart="69dp"
             android:padding="1dp"
             android:text="Set"
             android:textColor="@color/colorAccent" />
@@ -124,8 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:text="save"
-        android:textColor="@color/colorAccent" />
+        android:text="save" />
 
 </LinearLayout>
 
