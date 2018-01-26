@@ -13,34 +13,33 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class TaskHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "myDataBase";
     public static final String EXERCISE_TABLE_NAME = "exercise";
     public static final String EXERCISE_COLUMN_ID = "id";
     public static final String EXERCISE_COLUMN_NAME = "name";
     public static final String EXERCISE_COLUMN_WEIGHT = "weight";
-    public static final String EXERCISE_COLUMN_SET = "sets";
-    public static final String EXERCISE_COLUMN_REPETITION = "rep";
+    public static final String EXERCISE_COLUMN_SETS = "sets";
+    public static final String EXERCISE_COLUMN_REPETITIONS = "reps";
 
     public TaskHelper(Context context) {
-        super(context, EXERCISE_TABLE_NAME, null, 3);
+        super(context, EXERCISE_TABLE_NAME, null, 4);
     }
 
     @Override
 
     public void onCreate(SQLiteDatabase d) {
-        String table = "create table exercise" + "(id integer primary key autoincrement, name text, weight text, sets text, rep text)";
+        String table = "create table exercise" + "(id integer primary key autoincrement, name text, weight text, sets text, reps text)";
 
         d.execSQL(table);
 
     }
 
-    public boolean insertExercise(String name, String weight, String set, String rep) {
+    public boolean insertExercise(String name, String weight, String sets, String reps) {
         SQLiteDatabase d = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(EXERCISE_COLUMN_NAME, name);
         contentValues.put(EXERCISE_COLUMN_WEIGHT, weight);
-        contentValues.put(EXERCISE_COLUMN_SET, set);
-        contentValues.put(EXERCISE_COLUMN_REPETITION, rep);
+        contentValues.put(EXERCISE_COLUMN_SETS, sets);
+        contentValues.put(EXERCISE_COLUMN_REPETITIONS, reps);
 
         d.insert("exercise", null, contentValues);
         return true;
@@ -69,14 +68,14 @@ public class TaskHelper extends SQLiteOpenHelper {
     }
 
 
-    public void updateExercise(Integer id, String name, String weight, String set, String rep) {
+    public void updateExercise(Integer id, String name, String weight, String set, String reps) {
         SQLiteDatabase d = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("name", name);
         contentValues.put("weight", weight);
         contentValues.put("sets", set);
-        contentValues.put("rep", rep);
+        contentValues.put("reps", reps);
 
         d.update("exercise", contentValues, "id = ? ", new String[]{Integer.toString(id)});
     }

@@ -17,9 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginLeft="66dp"
             android:layout_marginStart="66dp"
+            android:layout_centerVertical="true"
             android:text="Exercise"
             android:textColor="@color/colorAccent" />
 
@@ -29,21 +29,29 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="78dp"
-            android:layout_marginRight="78dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="46dp"
+            android:layout_marginRight="46dp"
+            android:hint="enter exercise"
             android:inputType="text"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="97dp">
 
         <TextView
             android:id="@+id/weightTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_alignLeft="@+id/nameTextView"
-            android:layout_alignStart="@+id/nameTextView"
-            android:layout_below="@+id/addTextName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="66dp"
+            android:layout_marginStart="66dp"
+            android:layout_centerVertical="true"
             android:text="Weight"
             android:textColor="@color/colorAccent" />
 
@@ -51,9 +59,12 @@
             android:id="@+id/addTextWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/addTextName"
-            android:layout_alignStart="@+id/addTextName"
-            android:layout_below="@+id/addTextName"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="59dp"
+            android:layout_marginRight="59dp"
+            android:hint="enter weight"
             android:inputType="number"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
@@ -65,68 +76,76 @@
         android:layout_width="fill_parent"
         android:layout_height="97dp">
 
-        <EditText
-            android:id="@+id/addTextSet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/addTextRep"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/addTextRep"
-            android:inputType="text"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-
-        <EditText
-            android:id="@+id/addTextRep"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/addTextSet"
-            android:layout_marginEnd="76dp"
-            android:layout_marginRight="76dp"
-            android:inputType="text"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-
-        <TextView
-            android:id="@+id/RepTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_alignLeft="@+id/setTextView"
-            android:layout_alignStart="@+id/setTextView"
-            android:layout_alignTop="@+id/addTextRep"
-            android:text="Rep"
-            android:textColor="@color/colorAccent" />
-
         <TextView
             android:id="@+id/setTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
-            android:layout_alignBaseline="@+id/addTextSet"
-            android:layout_alignBottom="@+id/addTextSet"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="69dp"
-            android:layout_marginStart="69dp"
-            android:padding="1dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginStart="66dp"
+            android:layout_centerVertical="true"
             android:text="Set"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/addTextSets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="78dp"
+            android:layout_marginRight="78dp"
+            android:layout_centerVertical="true"
+            android:inputType="text"
+            android:hint="enter sets"
+            android:textColorHint="@color/colorAccent"
             android:textColor="@color/colorAccent" />
 
     </RelativeLayout>
 
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="97dp">
+
+        <TextView
+            android:id="@+id/RepsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="66dp"
+            android:layout_marginStart="66dp"
+            android:layout_centerVertical="true"
+            android:text="Reps"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/addTextReps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="78dp"
+            android:layout_marginRight="78dp"
+            android:hint="enter reps"
+            android:textColorHint="@color/colorAccent"
+            android:inputType="text"
+            android:textColor="@color/colorAccent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="97dp">
+
     <Button
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
         android:text="save" />
+
+    </RelativeLayout>
 
 </LinearLayout>
 

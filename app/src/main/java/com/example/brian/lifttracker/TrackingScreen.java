@@ -46,6 +46,12 @@ public class TrackingScreen extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this,LandingScreen.class);
+        startActivity(intent);
+    }
+
 
     private void update() {
 
@@ -70,6 +76,9 @@ public class TrackingScreen extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 String name = adapterView.getItemAtPosition(i).toString().split(",")[0].split(":")[1].trim();
+                String weight = adapterView.getItemAtPosition(i).toString().split(",")[1].split(":")[1].trim();
+                String sets = adapterView.getItemAtPosition(i).toString().split(",")[2].split(":")[1].trim();
+                String reps = adapterView.getItemAtPosition(i).toString().split(",")[3].split(":")[1].trim();
 
                 Cursor data = helper.getItemID(name);
 
@@ -82,6 +91,10 @@ public class TrackingScreen extends AppCompatActivity {
 
                     intent = new Intent(TrackingScreen.this, EditExerciseScreen.class);
                     intent.putExtra("id", itemID);
+                    intent.putExtra("name",name);
+                    intent.putExtra("weight",weight);
+                    intent.putExtra("sets",sets);
+                    intent.putExtra("reps",reps);
 
                     startActivity(intent);
 

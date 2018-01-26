@@ -14,8 +14,8 @@ public class EditExerciseScreen extends AppCompatActivity {
 
     TaskHelper helper;
     private Button delete, edit;
-    private EditText editName, editWeight, editSet, editRep;
-    private String name, weight, set, rep;
+    private EditText editName, editWeight, editSets, editReps;
+    private String name, weight, sets, reps;
     private int id;
 
     @Override
@@ -26,8 +26,8 @@ public class EditExerciseScreen extends AppCompatActivity {
         delete = findViewById(R.id.delete);
         editName = findViewById(R.id.editTextName);
         editWeight = findViewById(R.id.editTextWeight);
-        editSet = findViewById(R.id.editTextSet);
-        editRep = findViewById(R.id.editTextRep);
+        editSets = findViewById(R.id.editTextSets);
+        editReps = findViewById(R.id.editTextReps);
         helper = new TaskHelper(this);
 
         Intent intent = getIntent();
@@ -35,21 +35,21 @@ public class EditExerciseScreen extends AppCompatActivity {
         id = intent.getIntExtra("id", -1);
         name = intent.getStringExtra("name");
         weight = intent.getStringExtra("weight");
-        set = intent.getStringExtra("set");
-        rep = intent.getStringExtra("rep");
+        sets = intent.getStringExtra("sets");
+        reps = intent.getStringExtra("reps");
 
         editName.setText(name);
         editWeight.setText(weight);
-        editSet.setText(set);
-        editRep.setText(rep);
+        editSets.setText(sets);
+        editReps.setText(reps);
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String item = editName.getText().toString();
                 String item1 = editWeight.getText().toString();
-                String item2 = editSet.getText().toString();
-                String item3 = editRep.getText().toString();
+                String item2 = editSets.getText().toString();
+                String item3 = editReps.getText().toString();
 
                 if (!item.equals("") && !item1.equals("") && !item2.equals("") && !item3.equals("")) {
 
@@ -58,7 +58,7 @@ public class EditExerciseScreen extends AppCompatActivity {
                     startActivity(intent);
 
                 } else {
-                    Toast.makeText(EditExerciseScreen.this, "must fill in all fields", Toast.LENGTH_SHORT);
+                    Toast.makeText(EditExerciseScreen.this, "please fill in all fields", Toast.LENGTH_SHORT);
                 }
             }
         });
@@ -68,15 +68,21 @@ public class EditExerciseScreen extends AppCompatActivity {
             public void onClick(View view) {
                 helper.deleteExercise(id);
                 editName.setText("");
-                editRep.setText("");
+                editReps.setText("");
                 editWeight.setText("");
-                editSet.setText("");
+                editSets.setText("");
                 Toast.makeText(EditExerciseScreen.this, "deleted", Toast.LENGTH_SHORT);
                 Intent intent = new Intent(EditExerciseScreen.this, TrackingScreen.class);
                 startActivity(intent);
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this,TrackingScreen.class);
+        startActivity(intent);
     }
 
 }
