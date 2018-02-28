@@ -56,6 +56,7 @@ public class EditExerciseScreen extends AppCompatActivity {
                     helper.updateExercise(id, item, item1, item2, item3);
                     Intent intent = new Intent(EditExerciseScreen.this, TrackingScreen.class);
                     startActivity(intent);
+                    finish();
 
                 } else {
                     Toast.makeText(EditExerciseScreen.this, "please fill in all fields", Toast.LENGTH_SHORT);
@@ -74,15 +75,12 @@ public class EditExerciseScreen extends AppCompatActivity {
                 Toast.makeText(EditExerciseScreen.this, "deleted", Toast.LENGTH_SHORT);
                 Intent intent = new Intent(EditExerciseScreen.this, TrackingScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
 
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this,TrackingScreen.class);
-        startActivity(intent);
-    }
+
 
 }

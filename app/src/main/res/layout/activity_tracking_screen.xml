@@ -1,18 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
     tools:context="com.example.brian.lifttracker.TrackingScreen"
+    android:background="@color/colorPrimaryDark"
+
 
     >
 
 
+    <Button
+        android:id="@+id/action_add_exercise"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:srcCompat="@mipmap/ic_launcher_round"
+        android:text="+"
+        android:elevation="3dp"
+        android:fontFamily="sans-serif"
+        android:textSize="40sp"
+        android:textColor="#ffffff"
+        android:paddingBottom="16dp"
+        android:background="@drawable/round_add_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"/>
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/layout"
+        android:background="#1e282d"
+        >
+
+        <TextView
+            android:id="@+id/name_view"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/colorAccent"
+            android:text="Exercise"
+
+
+            />
+
+        <TextView
+            android:id="@+id/weight_view"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/colorAccent"
+            android:text="Weight"
+            />
+
+        <TextView
+            android:id="@+id/sets_view"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/colorAccent"
+            android:text="Sets"/>
+        <TextView
+            android:id="@+id/reps_view"
+            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/colorAccent"
+            android:text="Reps"/>
+
+    </LinearLayout>
+
+
+
+
     <ListView
+        android:background="@color/colorPrimaryDark"
         android:id="@+id/lift_tracker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"> </ListView>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:divider="@color/colorAccent"
+        >
+
+    </ListView>
+
+
+
 
 
 </RelativeLayout>
+

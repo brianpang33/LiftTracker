@@ -1,9 +1,49 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceListItemSmall"
-    android:gravity="center_vertical"
-    android:paddingLeft="20dp"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"
-    android:textColor="@color/colorAccent" />
+    android:gravity="center"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+   >
+
+    <TextView
+        android:id="@+id/name_view"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/colorAccent"
+
+
+ />
+
+    <TextView
+        android:id="@+id/weight_view"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/colorAccent"
+ />
+
+        <TextView
+        android:id="@+id/sets_view"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/colorAccent" />
+    <TextView
+        android:id="@+id/reps_view"
+        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/colorAccent" />
+
+</LinearLayout>

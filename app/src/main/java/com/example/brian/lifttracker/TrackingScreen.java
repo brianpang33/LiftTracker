@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.brian.lifttracker.database.TaskHelper;
@@ -31,26 +29,26 @@ public class TrackingScreen extends AppCompatActivity {
         helper = new TaskHelper(this);
         update();
 
+        Button add = findViewById(R.id.action_add_exercise);
+        add.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                onAddButtonClicked();
+            }
+        });
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.add_lift, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    private void onAddButtonClicked() {
         Intent intent = new Intent(this, AddExerciseScreen.class);
         startActivity(intent);
-        return true;
+        finish();
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this,LandingScreen.class);
-        startActivity(intent);
-    }
+
+
+
 
 
     private void update() {
@@ -60,25 +58,27 @@ public class TrackingScreen extends AppCompatActivity {
 
 
         while (data.moveToNext()) {
-            String s = "Exercise: " + data.getString(1) + ", " + "Weight: " + data.getString(2) + ", " + "Sets: " + data.getString(3) +
-                    ", " + "Reps: " + data.getString(4);
-            listData.add(s);
+            String name = data.getString(1) + "," +  data.getString(2) + "," + data.getString(3) +
+                    ","+ data.getString(4);
+            listData.add(name);
+
 
         }
 
 
-        ListAdapter adapter = new ArrayAdapter<>(this, R.layout.my_text_view, listData);
+        ArrayAdapter adapter = new CustomArrayAdapter(this, listData);
         taskListView.setAdapter(adapter);
+
 
         taskListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                String name = adapterView.getItemAtPosition(i).toString().split(",")[0].split(":")[1].trim();
-                String weight = adapterView.getItemAtPosition(i).toString().split(",")[1].split(":")[1].trim();
-                String sets = adapterView.getItemAtPosition(i).toString().split(",")[2].split(":")[1].trim();
-                String reps = adapterView.getItemAtPosition(i).toString().split(",")[3].split(":")[1].trim();
+                String name = adapterView.getItemAtPosition(i).toString().split(",")[0].trim();
+                String weight = adapterView.getItemAtPosition(i).toString().split(",")[1].trim();
+                String sets = adapterView.getItemAtPosition(i).toString().split(",")[2].trim();
+                String reps = adapterView.getItemAtPosition(i).toString().split(",")[3].trim();
 
                 Cursor data = helper.getItemID(name);
 
@@ -97,6 +97,7 @@ public class TrackingScreen extends AppCompatActivity {
                     intent.putExtra("reps",reps);
 
                     startActivity(intent);
+                    finish();
 
                 }
             }

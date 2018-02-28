@@ -12,6 +12,7 @@ public class LandingScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_screen);
+
         Button tracking = findViewById(R.id.button); //button for tracking screen
         tracking.setOnClickListener(new View.OnClickListener() {
 
@@ -30,16 +31,19 @@ public class LandingScreen extends AppCompatActivity {
             }
         });
 
+
     }
 
     private void onButtonClicked() {
         Intent intent = new Intent(this, TrackingScreen.class);
         startActivity(intent);
+
     }
 
     private void onTimerClicked() {
         Intent intent = new Intent(this, TimerScreen.class);
         startActivity(intent);
+
     }
 }
 

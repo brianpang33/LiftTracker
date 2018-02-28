@@ -52,11 +52,6 @@ public class AddExerciseScreen extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this,TrackingScreen.class);
-        startActivity(intent);
-    }
 
     public void AddExercise(String name, String weight, String sets, String reps) {
         boolean addData = taskHelper.insertExercise(name, weight, sets, reps);
@@ -65,6 +60,7 @@ public class AddExerciseScreen extends AppCompatActivity {
             Toast.makeText(this, "added", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, TrackingScreen.class);
             startActivity(intent);
+            finish();
 
         } else {
             Toast.makeText(this, "not added", Toast.LENGTH_SHORT).show();

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainscreenbackground"
+    android:background="@drawable/background"
+    android:id="@+id/landingScreen"
     tools:context="com.example.brian.lifttracker.LandingScreen">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LiftTracker"
+        android:textColor="#ffffff"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,12 +26,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Begin Tracking"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.063"
+        android:background="@drawable/round_button"
+        />
 
     <Button
         android:id="@+id/timer_button"
@@ -40,6 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.192"
+        android:background="@drawable/round_button"/>
 
 </android.support.constraint.ConstraintLayout>
