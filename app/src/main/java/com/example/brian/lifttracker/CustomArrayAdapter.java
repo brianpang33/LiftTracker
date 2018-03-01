@@ -44,7 +44,7 @@ public class CustomArrayAdapter extends ArrayAdapter {
         TextView weight = view.findViewById(R.id.weight_view);
         TextView sets = view.findViewById(R.id.sets_view);
         TextView reps = view.findViewById(R.id.reps_view);
-
+        TextView comments = view.findViewById(R.id.comments_view);
 
 
 
@@ -52,6 +52,9 @@ public class CustomArrayAdapter extends ArrayAdapter {
         weight.setText(sname.split(",")[1]);
         sets.setText(sname.split(",")[2]);
         reps.setText(sname.split(",")[3]);
+        comments.setText(sname.split(",")[4]);
+
+
 
         return view;
 
