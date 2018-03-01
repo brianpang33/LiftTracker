@@ -43,6 +43,7 @@ public class TrackingScreen extends AppCompatActivity {
     private void onAddButtonClicked() {
         Intent intent = new Intent(this, AddExerciseScreen.class);
         startActivity(intent);
+        finish();
 
     }
 
@@ -71,13 +72,17 @@ public class TrackingScreen extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] s = adapterView.getItemAtPosition(i).toString().split(",");
 
+                String name = s[0].trim();
+                String weight = s[1].trim();
+                String sets = s[2].trim();
+                String reps = s[3].trim();
+                String comments = "";
 
-                String name = adapterView.getItemAtPosition(i).toString().split(",")[0].trim();
-                String weight = adapterView.getItemAtPosition(i).toString().split(",")[1].trim();
-                String sets = adapterView.getItemAtPosition(i).toString().split(",")[2].trim();
-                String reps = adapterView.getItemAtPosition(i).toString().split(",")[3].trim();
-                String comments = adapterView.getItemAtPosition(i).toString().split(",")[4].trim();
+                if(s.length > 4) {
+                    comments = adapterView.getItemAtPosition(i).toString().split(",")[4].trim();
+                }
 
               Cursor data = helper.getItemID(sets);
 
@@ -97,6 +102,7 @@ public class TrackingScreen extends AppCompatActivity {
                     intent.putExtra("comments", comments);
 
                     startActivity(intent);
+                    finish();
 
 
                 }

@@ -1,10 +1,20 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight">
+<LinearLayout
 
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:paddingTop="5dp"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
     android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="@drawable/card_view"
    >
 
     <TextView
@@ -12,7 +22,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
+        android:paddingLeft="21dp"
         android:paddingRight="20dp"
         android:textColor="@color/colorAccent"
 
@@ -24,7 +34,7 @@
         android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
+        android:paddingLeft="21dp"
         android:paddingRight="20dp"
         android:textColor="@color/colorAccent"
  />
@@ -34,16 +44,23 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
+        android:paddingLeft="21dp"
         android:paddingRight="20dp"
-        android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent" />
     <TextView
         android:id="@+id/reps_view"
         android:layout_height="wrap_content"
         android:layout_width="80dp"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
+        android:paddingLeft="21dp"
         android:paddingRight="20dp"
         android:textColor="@color/colorAccent" />
+    <TextView
+        android:id="@+id/comments_view"
+        android:layout_height="0.1dp"
+        android:layout_width="0.1dp"
+        android:gravity="center_vertical"
+        />
 
 </LinearLayout>
+</FrameLayout>

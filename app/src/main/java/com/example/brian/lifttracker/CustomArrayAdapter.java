@@ -47,13 +47,17 @@ public class CustomArrayAdapter extends ArrayAdapter {
         TextView comments = view.findViewById(R.id.comments_view);
 
 
+        String[] s = sname.split(",");
+        name.setText(s[0]);
+        weight.setText(s[1]);
+        sets.setText(s[2]);
+        reps.setText(s[3]);
 
-        name.setText(sname.split(",")[0]);
-        weight.setText(sname.split(",")[1]);
-        sets.setText(sname.split(",")[2]);
-        reps.setText(sname.split(",")[3]);
-        comments.setText(sname.split(",")[4]);
-
+        if(s.length > 4) {
+            comments.setText(sname.split(",")[4]);
+        }else{
+            comments.setText("");
+        }
 
 
         return view;

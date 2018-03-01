@@ -86,6 +86,10 @@ public class EditExerciseScreen extends AppCompatActivity {
 
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(EditExerciseScreen.this, TrackingScreen.class);
+        startActivity(intent);
+        finish();
+    }
 }
