@@ -18,6 +18,7 @@ public class AddExerciseScreen extends AppCompatActivity {
     EditText weight;
     EditText sets;
     EditText reps;
+    EditText comments;
     private TaskHelper taskHelper;
 
     @Override
@@ -29,6 +30,7 @@ public class AddExerciseScreen extends AppCompatActivity {
         weight = findViewById(R.id.addTextWeight);
         sets = findViewById(R.id.addTextSets);
         reps = findViewById(R.id.addTextReps);
+        comments = findViewById(R.id.addTextComments);
 
         taskHelper = new TaskHelper(this);
 
@@ -40,9 +42,10 @@ public class AddExerciseScreen extends AppCompatActivity {
                 String checkWeight = weight.getText().toString();
                 String checkSets = sets.getText().toString();
                 String checkReps = reps.getText().toString();
+                String checkComments = comments.getText().toString();
 
                 if (checkName.length() != 0 && checkWeight.length() != 0) {
-                    AddExercise(checkName, checkWeight, checkSets, checkReps);
+                    AddExercise(checkName, checkWeight, checkSets, checkReps, checkComments);
                 }else{
                     Toast.makeText(AddExerciseScreen.this, "please enter all fields", Toast.LENGTH_SHORT).show();
                 }
@@ -53,8 +56,9 @@ public class AddExerciseScreen extends AppCompatActivity {
     }
 
 
-    public void AddExercise(String name, String weight, String sets, String reps) {
-        boolean addData = taskHelper.insertExercise(name, weight, sets, reps);
+
+    public void AddExercise(String name, String weight, String sets, String reps, String comments) {
+        boolean addData = taskHelper.insertExercise(name, weight, sets, reps, comments);
 
         if (addData) {
             Toast.makeText(this, "added", Toast.LENGTH_SHORT).show();

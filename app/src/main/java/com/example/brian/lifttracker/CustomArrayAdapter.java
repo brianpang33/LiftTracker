@@ -47,6 +47,7 @@ public class CustomArrayAdapter extends ArrayAdapter {
 
 
 
+
         name.setText(sname.split(",")[0]);
         weight.setText(sname.split(",")[1]);
         sets.setText(sname.split(",")[2]);
