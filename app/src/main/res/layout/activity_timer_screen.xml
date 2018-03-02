@@ -15,6 +15,7 @@
         android:layout_marginTop="25dp"
         android:text="timer"
         android:textColor="@color/colorAccent"
+        android:fontFamily="sans-serif"
         android:textSize="35sp"
         android:textStyle="bold" />
 
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content">
 
         <EditText
+
             android:id="@+id/enter_seconds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,17 +37,18 @@
             android:padding="15dp"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
+            android:background="@android:color/transparent"
             android:textSize="15sp" />
 
         <Button
             android:id="@+id/start"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/round_button"
             android:text="start"
-            android:textColor="@color/colorAccent"
             android:textSize="15sp" />
 
     </RelativeLayout>
@@ -55,9 +58,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:background="@color/colorPrimaryDark"
         android:text="cancel"
-        android:textColor="@color/colorAccent"
+        android:textColor="#000000"
+        android:background="@drawable/round_button"
         android:textSize="15sp" />
 
 </LinearLayout>
