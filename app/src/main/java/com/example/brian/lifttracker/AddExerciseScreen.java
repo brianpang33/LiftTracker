@@ -44,7 +44,7 @@ public class AddExerciseScreen extends AppCompatActivity {
                 String checkReps = reps.getText().toString();
                 String checkComments = comments.getText().toString();
 
-                if (checkName.length() != 0 && checkWeight.length() != 0) {
+                if (checkName.length() != 0 && checkWeight.length() != 0 && checkSets.length() !=0 && checkReps.length() !=0) {
                     AddExercise(checkName, checkWeight, checkSets, checkReps, checkComments);
                 }else{
                     Toast.makeText(AddExerciseScreen.this, "please enter all fields", Toast.LENGTH_SHORT).show();
